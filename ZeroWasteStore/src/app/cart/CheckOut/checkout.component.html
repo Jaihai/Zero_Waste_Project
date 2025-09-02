@@ -1,0 +1,36 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container mt-5 text-center">
+  <h2 class="fw-bold">🎉 Checkout 🎉</h2>
+
+  <table class="table table-bordered mt-3" *ngIf="orderItems.length > 0">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price (₹)</th>
+        <th>Quantity</th>
+        <th>Subtotal (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orderItems">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price * item.quantity }}</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="fw-bold text-end">Total</td>
+        <td class="fw-bold">₹{{ getTotal() }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-success mt-3" (click)="placeOrder()">Place Order</button>
+
+  <div *ngIf="lastOrder" class="mt-4">
+    <h5>Status: <span class="badge bg-info">{{ lastOrder.status }}</span></h5>
+    <p>Estimated delivery: <strong>{{ lastOrder.estimatedDelivery | date }}</strong></p>
+    <a routerLink="/orders" class="btn btn-primary mt-2">Go to My Orders</a>
+  </div>
+</div>

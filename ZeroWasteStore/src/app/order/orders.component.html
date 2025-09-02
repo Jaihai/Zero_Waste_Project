@@ -1,0 +1,22 @@
+<app-user-navbar></app-user-navbar>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+<div class="container mt-5">
+  <h2 class="mb-4">My Orders</h2>
+
+  <div *ngIf="orders.length === 0">
+    <p>You have no orders yet.</p>
+  </div>
+
+  <div *ngFor="let order of orders" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Order ID: {{ order.id }}</h5>
+      <p class="card-text">
+        Date: {{ order.orderDate | date:'shortDate' }}<br>
+        Estimated delivery: {{ order.estimatedDelivery | date:'shortDate' }}
+      </p>
+      <p class="fw-bold">Total: ₹{{ getTotal(order) }}</p>
+      <span class="badge bg-info">{{ order.status }}</span>
+    </div>
+  </div>
+</div>

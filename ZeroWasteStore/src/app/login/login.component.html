@@ -1,0 +1,44 @@
+<app-public-navbar></app-public-navbar> 
+
+<div class="container" style="max-width: 400px; margin-top: 50px;">
+  <h2 class="text-center mb-4">Login</h2>
+
+  <form (ngSubmit)="onLogin()">
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+  </form>
+
+<div class="text-center mt-3">
+    <p>
+      Don’t have an account?
+      <!-- 🔹 Correct routerLink for Register -->
+      <a routerLink="/register" class="btn btn-link">Register</a>
+    </p>
+  </div>
+  </div>

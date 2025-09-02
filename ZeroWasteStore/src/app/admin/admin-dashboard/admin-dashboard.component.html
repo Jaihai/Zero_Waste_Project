@@ -1,0 +1,73 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-5">
+  <h2 class="mb-4">👨‍💼 Welcome Admin</h2>
+
+  <!-- Success/Failure Messages -->
+  <div *ngIf="message" class="alert alert-info">{{ message }}</div>
+
+  <!-- Add Product Button -->
+  <div class="mb-3">
+    <button class="btn btn-success" (click)="goToAddProduct()">
+      ➕ Add Product
+    </button>
+  </div>
+  
+  <!-- Product List -->
+  <h4>All Products</h4>
+  <table class="table table-bordered table-striped mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price (₹)</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop Products -->
+      <tr *ngFor="let p of products">
+        <td>{{ p.id }}</td>
+        <td>
+<img *ngIf="p.imageUrl" [src]="'http://localhost:8080' + p.imageUrl" alt="Product Image" style="width: 80px; height: 80px;" />
+        </td>
+        <td>{{ p.name }}</td>
+        <td>₹{{ p.price }}</td>
+        <td>{{ p.category }}</td>
+        <td>{{ p.description }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="startEdit(p)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteProduct(p.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Edit Form -->
+  <div *ngIf="editingProduct" class="mt-4 p-3 border rounded">
+    <h5>Edit Product</h5>
+    <form (ngSubmit)="updateProduct()">
+      <div class="mb-2">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="editingProduct.name" name="name" class="form-control" required />
+      </div>
+      <div class="mb-2">
+        <label>Price (₹):</label>
+        <input type="number" [(ngModel)]="editingProduct.price" name="price" class="form-control" required />
+      </div>
+      <div class="mb-2">
+        <label>Category:</label>
+        <input type="text" [(ngModel)]="editingProduct.category" name="category" class="form-control" required />
+      </div>
+      <div class="mb-2">
+        <label>Description:</label>
+        <textarea [(ngModel)]="editingProduct.description" name="description" class="form-control"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success">Update</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+</div>

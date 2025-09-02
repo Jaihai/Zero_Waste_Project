@@ -1,0 +1,40 @@
+<div class="container mt-4">
+
+  <!-- Banner / Ads -->
+  <!-- Essentials Hero Banner -->
+<section class="essentials-hero d-flex align-items-center justify-content-center text-white text-center">
+  <div class="hero-inner">
+    <small class="badge rounded-pill bg-light text-success mb-3">Featured • Essentials</small>
+    <h1 class="hero-title fw-bold">Everyday Essentials — Eco Friendly</h1>
+    <p class="hero-sub lead mb-3">
+      Reusable, sustainable, and made for daily life. Shop curated essentials for a greener home.
+    </p>
+    <a routerLink="/essentials" class="btn btn-light btn-lg fw-bold">Shop Essentials</a>
+  </div>
+</section>
+<br>
+
+
+  <!-- Products Grid -->
+  <h3 class="mb-3 text-success">Essentials Products</h3>
+  <div class="row g-3">
+    <div class="col-md-2" *ngFor="let product of products">
+      <div class="card h-100 text-center shadow-sm position-relative">
+        
+        <!-- Like Button -->
+        
+
+        <img [src]="product.img" class="card-img-top mt-2" alt="{{product.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{product.name}}</h6>
+          <p class="text-success mb-2">{{product.price}}</p>
+          <button (click)="addToCart(product)" class="btn btn-success btn-sm w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<br>
+<br>

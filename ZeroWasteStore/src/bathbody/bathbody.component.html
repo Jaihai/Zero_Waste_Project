@@ -1,0 +1,43 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+<div class="container mt-4">
+
+  <!-- Banner / Ads -->
+  <!-- Bath & Body Hero Banner -->
+  <section class="bathbody-hero d-flex align-items-center justify-content-center text-white text-center">
+    <div class="hero-inner">
+      <small class="badge rounded-pill bg-light text-info mb-3">Featured • Bath & Body</small>
+      <h1 class="hero-title fw-bold">Relax & Refresh with Bath & Body</h1>
+      <p class="hero-sub lead mb-3">
+        Luxurious, natural, and skin-friendly bath and body care for everyday wellness.
+      </p>
+      <a routerLink="/bathbody" class="btn btn-light btn-lg fw-bold">Shop Bath & Body</a>
+    </div>
+  </section>
+  <br>
+
+  <!-- Products Grid -->
+  <h3 class="mb-3 text-info">Bath & Body Products</h3>
+  <div class="row g-3">
+    <div class="col-md-2" *ngFor="let product of products">
+      <div class="card h-100 text-center shadow-sm position-relative">
+        
+        
+
+        <img [src]="product.img" class="card-img-top mt-2" alt="{{product.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{product.name}}</h6>
+          <p class="text-info mb-2">{{product.price}}</p>
+          <button (click)="addToCart(product)" class="btn btn-info btn-sm w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<br>
+<br>

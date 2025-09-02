@@ -1,0 +1,59 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container mx-auto p-4">
+  <h2 class="text-xl font-semibold mb-4">Manage Orders</h2>
+
+  <!-- No orders message -->
+  <div *ngIf="orders.length === 0" class="text-gray-500">
+    No orders found.
+  </div>
+
+  <!-- Orders table -->
+  <table class="min-w-full border border-gray-300">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="px-4 py-2 border">Order ID</th>
+        <th class="px-4 py-2 border">User</th>
+        <th class="px-4 py-2 border">Product</th>
+        <th class="px-4 py-2 border">Order Date</th>
+        <th class="px-4 py-2 border">Estimated Delivery</th>
+        <th class="px-4 py-2 border">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td class="px-4 py-2 border">{{ order.id }}</td>
+        <td class="px-4 py-2 border">{{ order.userName }}</td>
+        <td class="px-4 py-2 border">{{ order.productName }}</td>
+        <td class="px-4 py-2 border">{{ order.orderDate | date:'mediumDate' }}</td>
+        <td class="px-4 py-2 border">
+          <input
+            type="date"
+            [(ngModel)]="order.estimatedDelivery"
+            class="border px-2 py-1 rounded w-full"
+          />
+        </td>
+       <td class="px-4 py-2 border">
+  <button
+    *ngIf="order.status !== 'DELIVERED'; else deliveredBtn"
+    (click)="sendProduct(order)"
+    class="bg-black text-white px-3 py-1 rounded hover:bg-gray-800"
+  >
+    Send
+  </button>
+
+  <ng-template #deliveredBtn>
+    <button
+      class="bg-green-600 text-black px-3 py-1 rounded cursor-not-allowed"
+    >
+      Delivered
+    </button>
+  </ng-template>
+</td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

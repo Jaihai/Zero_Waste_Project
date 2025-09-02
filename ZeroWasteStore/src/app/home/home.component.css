@@ -1,0 +1,101 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;   /* Same width for all */
+  height: 350px;  /* Same height for all */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  background: #fff;
+}
+
+/* ✅ Force all images to same height without distortion */
+.category-card img {
+  width: 100%;
+  height: 200px;   /* Fixed height for all images */
+  object-fit: cover; /* Crops image but keeps ratio */
+  display: block;
+}
+
+/* Text section */
+.category-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+.category-card p {
+  font-size: 14px;
+  text-align: center;
+  margin: 0 10px 10px;
+}
+
+.category-card {
+  width: 100%;
+  height: 320px; /* Increase or decrease as you like */
+  object-fit: cover;
+}
+/* Navbar background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4fb; /* custom blue */
+  color: white;
+  z-index: 1000;
+}
+
+/* Navbar brand/logo */
+.navbar .navbar-brand {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand span.text-success {
+  color: #28a745; /* green */
+}
+
+/* Make all nav links white */
+.navbar .nav-link {
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Optional: hover effect */
+.navbar .nav-link:hover {
+  color: #d1e7ff !important;
+}
+
+/* Ensure ul displays properly */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Search bar adjustments */
+.navbar .form-control {
+  border-radius: 4px;
+}
+
+/* Search button */
+.navbar .btn-outline-light {
+  color: white;
+  border-color: white;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: white;
+  color: #007bff;
+  border-color: white;
+}

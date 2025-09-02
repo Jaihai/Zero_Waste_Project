@@ -1,0 +1,52 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container mx-auto mt-3 p-4">
+  <!-- Search Bar -->
+  <input
+    type="text"
+    placeholder="Search products..."
+    [(ngModel)]="query"
+    (input)="onSearch()"
+    class="border p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+  />
+
+  <!-- No Results -->
+  <div *ngIf="results.length === 0" class="text-red-500 font-semibold text-center mt-4">
+    No products found.
+  </div>
+
+  <!-- Results Grid -->
+  <div *ngIf="results.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div *ngFor="let product of results" class="border p-2 rounded flex flex-col items-center bg-white shadow-sm">
+  
+      <!-- Fixed-size image container -->
+<div class="w-full h-32 md:h-36 lg:h-40 overflow-hidden rounded mb-2 flex justify-center items-center bg-gray-100">
+  <img 
+    [src]="product.img" 
+    alt="{{ product.name }}" 
+    class="h-full w-auto object-contain"
+  />
+</div>
+
+  
+      <!-- Product Name & Category -->
+      <h3 class="font-semibold text-center text-gray-800 text-sm md:text-base">{{ product.name }}</h3>
+      <p class="text-gray-500 text-xs mb-1">{{ product.category || 'General' }}</p>
+  
+      <!-- Price -->
+      <p class="text-blue-600 font-bold text-sm md:text-base mb-2">₹{{ product.price }}</p>
+  
+      <!-- Add to Cart / Like Buttons -->
+      <div class="flex gap-2 w-full">
+        <button
+          (click)="addToCart(product)"
+          class="flex-1 bg-white text-black border border-gray-400 px-2 py-1 rounded hover:bg-gray-100 transition"
+        >
+          Add to Cart
+        </button>
+
+        
+      </div>
+    </div> <!-- End of ngFor product card -->
+  </div> <!-- End of Results Grid -->
+</div> <!-- End of container -->

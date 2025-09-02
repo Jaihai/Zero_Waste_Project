@@ -1,0 +1,20 @@
+<app-user-navbar></app-user-navbar>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let product of products">
+      <div class="card p-3 h-100 text-center">
+        <img [src]="getImageUrl(product.imageUrl)" 
+             alt="{{ product.name }}" 
+             class="product-img" />
+
+        <h5 class="mt-2">{{ product.name }}</h5>
+        <p class="text-success fw-bold">₹{{ product.price }}</p>
+        <button class="btn btn-success btn-sm" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

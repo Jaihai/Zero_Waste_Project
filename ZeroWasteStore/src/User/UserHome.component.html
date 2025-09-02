@@ -1,0 +1,76 @@
+<app-user-navbar></app-user-navbar>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+<!-- Hero Section -->
+<div class="hero-section text-white text-center d-flex align-items-center justify-content-center"
+     style="background: linear-gradient(rgba(0, 100, 0, 0.6), rgba(0, 100, 0, 0.6)), 
+            url('assets/hero-bg.jpg') center/cover no-repeat; height: 80vh;">
+  <div>
+    <h1 class="fw-bold display-3">Welcome to ZeroWasteStore</h1>
+    <p class="lead">Eco-friendly products for a sustainable lifestyle 🌱</p>
+    <a routerLink="/shop" class="btn btn-light btn-lg mt-3">Shop Now</a>
+  </div>
+</div>
+
+<!-- Shop by Category Section -->
+<section class="py-5 bg-light shop-category">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Shop by Category</h2>
+    <div class="row justify-content-center g-4">
+      
+      <!-- First Row (3 cards) -->
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center">
+          <img src="assets/images/essentials.jpg" alt="Essentials">
+          <div class="card-body">
+            <h5 class="card-title">Essentials</h5>
+            <a routerLink="essentials" class="btn btn-outline-success">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center">
+          <img src="assets/images/household.jpg" class="card-img-top" alt="Household">
+          <div class="card-body">
+            <h5 class="card-title">Household</h5>
+            <a routerLink="household" class="btn btn-outline-success">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center">
+          <img src="assets/images/haircare.jpg" class="card-img-top" alt="Hair Care">
+          <div class="card-body">
+            <h5 class="card-title">Hair Care</h5>
+            <a routerLink="haircare" class="btn btn-outline-success">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Second Row (2 cards centered) -->
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center">
+          <img src="assets/images/cleanbeauty.jpg" class="card-img-top" alt="Clean Beauty">
+          <div class="card-body">
+            <h5 class="card-title">Clean Beauty</h5>
+            <a routerLink="cleanbeauty" class="btn btn-outline-success">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center">
+          <img src="assets/images/bathbody .jpg" class="card-img-top" alt="Bath & Body">
+          <div class="card-body">
+            <h5 class="card-title">Bath & Body</h5>
+            <a routerLink="bathbody" class="btn btn-outline-success">Explore</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

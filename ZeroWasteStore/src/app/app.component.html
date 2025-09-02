@@ -1,0 +1,11 @@
+<!-- Guest Navbar -->
+<app-public-navbar *ngIf="isGuest()"></app-public-navbar>
+
+<!-- User Navbar -->
+<app-user-navbar *ngIf="isUser()"></app-user-navbar>
+
+<!-- Admin Navbar -->
+<app-admin-navbar *ngIf="isAdmin()"></app-admin-navbar>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>

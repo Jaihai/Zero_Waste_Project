@@ -1,0 +1,10 @@
+.auth-wrapper {
+  min-height: calc(100vh - 160px); /* leave space for navbar+footer */
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  padding: 20px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+}

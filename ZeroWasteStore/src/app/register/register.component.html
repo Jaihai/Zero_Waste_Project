@@ -1,0 +1,48 @@
+<app-public-navbar></app-public-navbar>
+
+<div class="container" style="max-width: 400px; margin-top: 50px;">
+  <h2>Register</h2>
+
+  <form *ngIf="!success" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="mb-3">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" required placeholder="Enter your first name">
+    </div>
+
+    <div class="mb-3">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" required placeholder="Enter your last name">
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="email" required placeholder="Enter your email">
+    </div>
+
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="password" required placeholder="Enter your password">
+    </div>
+
+    <div class="mb-3">
+      <label>Role</label>
+      <select class="form-control" [(ngModel)]="role" name="role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-dark text-white w-100">Register</button>
+
+    <div *ngIf="errorMessage" class="text-danger mt-2">
+      {{ errorMessage }}
+    </div>
+  </form>
+
+  <div *ngIf="success" class="text-center mt-5">
+    <h3 class="text-success">Registration Successful! Welcome {{ firstName }}</h3>
+    <a routerLink="/login" class="btn btn-outline-primary mt-3">Go to Login</a>
+  </div>
+</div>
+
+<br>

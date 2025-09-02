@@ -1,0 +1,43 @@
+<footer class="bg-success text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>TheRoundup</h5>
+        <p>Your guide to a sustainable lifestyle and eco-friendly products.</p>
+        <button class="btn btn-outline-light" (click)="subscribe()" [disabled]="isSubscribed">
+          {{ isSubscribed ? 'Subscribed' : 'Subscribe for Updates' }}
+        </button>
+      </div>
+      <div class="col-md-2">
+        <h6>Home</h6>
+        <ul class="list-unstyled">
+          <li><a routerLink=" " class="text-white" (click)="reloadPage('/')">Home</a></li>
+          <li><a routerLink="about" class="text-white" (click)="reloadPage('/about')">About Us</a></li>
+          <li><a routerLink="team" class="text-white" (click)="reloadPage('/team')">Meet the Team</a></li>
+          <li><a routerLink="contact" class="text-white" (click)="reloadPage('/contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Buy Green</h6>
+        <ul class="list-unstyled">
+          <li><a routerLink="household" class="text-white" (click)="reloadPage('/household')">Livingroom</a></li>
+          <li><a routerLink="bathbody" class="text-white" (click)="reloadPage('/bathbody')">Bathroom</a></li>
+          <li><a routerLink="cleanbeauty" class="text-white" (click)="reloadPage('/cleanbeauty')">MakeUp</a></li>
+          <li><a routerLink="essentials" class="text-white" (click)="reloadPage('/essentials')">Kitchen</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Guides & Tips</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Wind Power</a></li>
+          <li><a href="#" class="text-white">Plastic Waste</a></li>
+          <li><a href="#" class="text-white">Emissions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <p class="mb-0">&copy; 2025 TheRoundup - All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+

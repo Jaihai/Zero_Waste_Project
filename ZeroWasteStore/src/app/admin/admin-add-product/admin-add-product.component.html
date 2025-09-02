@@ -1,0 +1,67 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-4">
+
+  <!-- Back to Dashboard -->
+  <button class="btn btn-secondary mb-3" (click)="goToDashboard()">
+    ← Back to Dashboard
+  </button>
+
+  <!-- Success Message -->
+  <div *ngIf="showSuccess" class="alert alert-success">
+    <h4>✅ Product added successfully!</h4>
+    <p><strong>Added Product:</strong></p>
+    <p><b>Name:</b> {{ addedProduct.name }}</p>
+    <p><b>Price:</b> ₹{{ addedProduct.price }}</p>
+    <p><b>Category:</b> {{ addedProduct.category }}</p>
+    <p><b>Description:</b> {{ addedProduct.description }}</p>
+    <p><b>Product Image:</b> {{ addedProduct.image }}</p>
+
+    <!-- Add New Product button -->
+    <button class="btn btn-primary mt-3" (click)="addNewProduct()">
+      + Add New Product
+    </button>
+  </div>
+
+  <!-- Add Product Form -->
+  <form *ngIf="!showSuccess" (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input type="text" class="form-control"
+             [(ngModel)]="product.name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control"
+             [(ngModel)]="product.price" name="price" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <select class="form-select"
+              [(ngModel)]="product.category" name="category" required>
+        <option value="" disabled>Select category</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="3"
+                [(ngModel)]="product.description" name="description" required></textarea>
+    </div>
+
+    <div class="mb-3">
+  <label class="form-label">Product Image</label>
+  <input type="file" class="form-control"
+         (change)="onFileSelected($event)"
+         accept="image/*">  <!-- only images -->
+</div>
+
+
+
+    <button type="submit" class="btn btn-success">Add Product</button>
+  </form>
+</div>

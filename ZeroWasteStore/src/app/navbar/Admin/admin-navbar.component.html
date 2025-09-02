@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand text-white" routerLink="/admin/dashboard">Admin Dashboard</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/admin/add-product">Add Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/admin/manage">Manage Products</a>
+      </li>
+    </ul>
+    <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+  </div>
+</nav>

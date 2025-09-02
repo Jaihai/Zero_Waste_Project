@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MyShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#userNavbar" aria-controls="userNavbar" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="userNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ProductsComponent">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/orders">Orders</a>
+        </li>
+      </ul>
+
+       <div class="d-flex align-items-center">
+      <input
+        type="text"
+        class="form-control me-2"
+        [(ngModel)]="searchQuery"
+        placeholder="Search products..."
+        style="width: 300px;"
+      />
+      <button class="btn btn-outline-light" (click)="onSearch()">Search</button>
+    </div>
+
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+  <li class="nav-item">
+    <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+  </li>
+</ul>
+
+
+      
+
+    </div>
+  </div>
+</nav>
+<!-- Category Links Below Navbar -->
+<div class="bg-light py-2 border-top border-bottom">
+  <div class="container d-flex justify-content-center gap-4">
+    <a routerLink="/essentials" class="text-decoration-none text-dark">Essentials</a>
+    <a routerLink="/household" class="text-decoration-none text-dark">Household</a>
+    <a routerLink="/haircare" class="text-decoration-none text-dark">Hair Care</a>
+    <a routerLink="/cleanbeauty" class="text-decoration-none text-dark">Clean Beauty</a>
+    <a routerLink="/bathbody" class="text-decoration-none text-dark">Bath & Body</a>
+  </div>
+</div>

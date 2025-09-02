@@ -1,0 +1,14 @@
+<div class="container mt-5 text-center">
+      <h2>Meet the Team</h2>
+      <p>Our amazing team of eco-conscious girls 👩‍💻🌱</p>
+
+      <div class="d-flex justify-content-center flex-wrap gap-4 mt-4">
+        <div *ngFor="let member of team" class="text-center">
+          <img [src]="member.img" class="rounded-circle" width="100" alt="{{member.name}}">
+          <p class="mb-0 mt-2"><strong>{{member.name}}</strong></p>
+          <small>{{member.role}}</small>
+        </div>
+      </div>
+    </div>
+
+    <br>
